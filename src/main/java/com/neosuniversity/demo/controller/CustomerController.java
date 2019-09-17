@@ -57,4 +57,9 @@ public class CustomerController {
     public String demo(){
         return "demo";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }
