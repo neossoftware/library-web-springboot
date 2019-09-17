@@ -98,7 +98,7 @@ public class CustomerController {
             model.addAttribute("customer", customer);
             return "listCustomer";
         }else{
-            System.out.println("ID: " +customer.getId());
+            System.out.println("ID UPDATE: " +customer.getId());
             this.customerDAORepository.update(customer);
             return "redirect:/customer";
         }
