@@ -21,7 +21,6 @@ http://localhost:8080/customer
 4.- Para la ejecucion de la consola de H2 ejecutar
 http://localhost:8080/h2-console
 
-5.- JDBC-URL
 ```ruby
 jdbc:h2:mem:testdb
 ```
