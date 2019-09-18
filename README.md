@@ -18,3 +18,11 @@ http://localhost:8080/customer
 
 ![Image of version](https://github.com/neossoftware/library-web-springboot/blob/spring-jdbc-template/src/main/resources/images/customer.JPG)
 
+4.- Para la ejecucion de la consola de H2 ejecutar
+http://localhost:8080/h2-console
+
+5.- JDBC-URL
+```ruby
+jdbc:h2:mem:testdb
+```
+![Image of version](https://github.com/neossoftware/library-web-springboot/blob/spring-jdbc-template/src/main/resources/images/consola_h2.JPG)
