@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+
 public class AuthorDAORepositoryImpl implements AuthorDAORepository{
 
     private final String ID="id";
@@ -37,8 +38,8 @@ public class AuthorDAORepositoryImpl implements AuthorDAORepository{
         Map<String,Object> parameters = new HashMap<>();
         parameters.put(NAME,author.getName());
         parameters.put(LAST_NAME,author.getLastName());
-        Long newId = (Long) insertCustomer.executeAndReturnKey(parameters);
-        author.setId(Long.valueOf(newId));
+        Number newId =  insertCustomer.executeAndReturnKey(parameters);
+        author.setId(newId.longValue());
         return author;
     }
 

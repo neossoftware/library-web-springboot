@@ -20,6 +20,7 @@ public class CustomerDAORepositoryImpl implements CustomerDAORepository {
     private final String ADDRESS="address";
     private final String TABLE_CUSTOMER="customer";
 
+
     private JdbcTemplate jdbcTemplate;
     private SimpleJdbcInsert insertCustomer;
 
@@ -43,8 +44,8 @@ public class CustomerDAORepositoryImpl implements CustomerDAORepository {
         parameters.put(NAME,customer.getName());
         parameters.put(LAST_NAME,customer.getLastName());
         parameters.put(ADDRESS,customer.getAddress());
-        Long newId = (Long) insertCustomer.executeAndReturnKey(parameters);
-        customer.setId(Long.valueOf(newId));
+        Number newId = insertCustomer.executeAndReturnKey(parameters);
+        customer.setId(newId.longValue());
         return customer;
     }
 
@@ -69,15 +70,15 @@ public class CustomerDAORepositoryImpl implements CustomerDAORepository {
     }
 
     @Override
-    public void delete(Customer customer) {
+    public int delete(Customer customer) {
         final String QUERY_DELETE="DELETE FROM customer WHERE id=?";
-        jdbcTemplate.update(QUERY_DELETE,customer.getId());
+        return jdbcTemplate.update(QUERY_DELETE,customer.getId());
     }
 
     @Override
-    public void update(Customer customer) {
+    public int update(Customer customer) {
         final String QUERY_UPDATE="UPDATE customer SET name=?,lastname=?,address=? WHERE id=?";
-        jdbcTemplate.update(QUERY_UPDATE,customer.getName(),customer.getLastName(),customer.getAddress(),customer.getId());
+        return jdbcTemplate.update(QUERY_UPDATE,customer.getName(),customer.getLastName(),customer.getAddress(),customer.getId());
     }
 
     @Override

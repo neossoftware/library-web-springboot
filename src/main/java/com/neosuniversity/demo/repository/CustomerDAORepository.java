@@ -12,8 +12,8 @@ public interface CustomerDAORepository {
     Optional<Customer> findById(Long id);
     List<Customer> findAll();
     long count();
-    void delete(Customer customer);
-    void update(Customer customer);
+    int delete(Customer customer);
+    int update(Customer customer);
     boolean existById(Long id);
 
 }
