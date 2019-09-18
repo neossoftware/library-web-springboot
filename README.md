@@ -1,7 +1,7 @@
 # Library-Web-SpringBoot 2.x
 
 ----------------------------------
-Pasos para la ejecucion del proyuecto
+Pasos para la ejecucion del proyecto
 ----------------------------------
 
 1.- clonar o descargar el proyecto
